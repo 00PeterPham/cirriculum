@@ -43,7 +43,7 @@ $(document).ready(function() {
         }else if(date_select_month == 44){
         	month = 'nov';
         }else if(date_select_month == 12){
-        	month = 'dec';
+        	month = 'decem';
         }
 
         day = date_select_day.replace(/0/g , "");

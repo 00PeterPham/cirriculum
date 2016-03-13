@@ -11,16 +11,16 @@
   // mail("titan.maclub@gmail.com","My subject",$msg);
 
   	//TITAN DB
-	$servername = "mysql.peter-pham.com";
-	$username = "titanmac";
-	$password = "headkick9591";
-	$dbname = "titan_mac";
+	// $servername = "mysql.peter-pham.com";
+	// $username = "titanmac";
+	// $password = "headkick9591";
+	// $dbname = "titan_mac";
 
   	//LOCAL DB
-	// $servername = "localhost";
-	// $username = "root";
-	// $password = "headkick";
-	// $dbname = "titan";
+	$servername = "localhost";
+	$username = "root";
+	$password = "headkick";
+	$dbname = "titan";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
