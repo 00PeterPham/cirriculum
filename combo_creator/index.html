@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Titan | Martial Arts Club | Combo Creator</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="title" content="">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+		<script type="text/javascript" src="js/lib/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/lib/jquery.mobile-1.4.5.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+		<script type="text/javascript" src="js/post.js"></script>
+		<!--[if lt IE 9]>
+			<script type="text/javascript" src="js/lib/html5shiv.min.js"></script>
+			<script type="text/javascript" src="js/lib/html5shiv-printshiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="inner">
+			<div class="top-con">
+				<textarea readonly='true' id='combo-1' class="combo focus" placeholder='combo'></textarea>
+				<div class="table">
+					<div class="expand cell">expand all</div>
+					<div class="collapse cell">collapse all</div>
+					<div class="clear-combo cell">clear combo</div>
+				</div>
+				<div class="hamburger"><span class='close-text'>CLOSE </span>MENU</div>
+				<div class="mobile-menu">
+					<div class="table">
+						<div class="ar-combo cell">combo box: </div>
+						<div class="add-combo cell">+</div>
+						<div class="remove-combo cell">-</div>
+					</div>
+				</div>
+				<div class="modifiers-con">
+					<div class="switch mod toggle">switch stance</div>
+					<div class="multi-con ">
+						<div class="multi toggle mod">x<span class='multi-val'>2</span></div>
+						<div class="multi-inputs">
+							<select class='multi-select' data-role="none">
+								<option>2</option>
+								<option>5</option>
+								<option>10</option>
+								<option>15</option>
+								<option>25</option>
+								<option>50</option>
+							</select>
+							<input class='multi-input' type='text' data-role="none">
+						</div>
+					</div>
+					<div class="submit mod toggle">SUBMIT</div>
+				</div>
+			</div>
+			<div class="technique-con">
+				<h2>strikes<span class="arrow-down"></span></h2>
+				<div class="strikes-con">
+					<div class="tech-wrapper">
+						<h3>punches<span class="arrow-up"></span></h3>
+						<div class="table">
+							<div class="row">
+								<div id='' class="technique">PUNCHES</div>
+							</div>
+							<div class="row">
+								<div id='jab' class="technique">JAB</div>
+								<div id='cross' class="technique">CROSS</div>
+							</div>
+							<div class="row">
+								<div id='lhook' class="technique">FRONT HOOK</div>
+								<div id='rhook' class="technique">REAR HOOK</div>
+							</div>
+							<div class="row">
+								<div id='lup' class="technique">FRONT UPPERCUT</div>
+								<div id='rup' class="technique">REAR UPPERCUT</div>
+							</div>
+						</div>
+					</div>
+					<div class="tech-wrapper">
+						<h3>elbows<span class="arrow-up"></span></h3>
+						<div class="table">
+							<div class="row">
+								<div id='' class="technique">ELBOWS</div>
+							</div>
+							<div class="row">
+								<div id='lelbow' class="technique">FRONT ELBOW</div>
+								<div id='relbow' class="technique">REAR ELBOW</div>
+							</div>
+							<div class="row">
+								<div id='ldelbow' class="technique">FRONT DOWN ELBOW</div>
+								<div id='rdelbow' class="technique">REAR DOWN ELBOW</div>
+							</div>
+							<div class="row">
+								<div id='luelbow' class="technique">FRONT UP ELBOW</div>
+								<div id='ruelbow' class="technique">REAR UP ELBOW</div>
+							</div>
+							<div class="row">
+								<div id='lvelbow' class="technique">FRONT VERTICAL ELBOW</div>
+								<div id='rvelbow' class="technique">REAR VERTICAL ELBOW</div>
+							</div>
+						</div>
+					</div>
+					<div class="tech-wrapper">
+						<h3>kicks<span class="arrow-up"></span></h3>
+						<div class="table">
+							<div class="row">
+								<div id='' class="technique">KICKS</div>
+							</div>			
+							<div class="row">
+								<div id='' class="technique">FRONT BODY KICK</div>
+								<div id='' class="technique">REAR BODY KICK</div>
+							</div>
+							<div class="row">
+								<div id='' class="technique">FRONT LEG KICK</div>
+								<div id='' class="technique">REAR LEG KICK</div>
+							</div>
+							<div class="row">
+								<div id='' class="technique">FRONT HEAD KICK</div>
+								<div id='' class="technique">REAR HEAD KICK</div>
+							</div>
+							<div class="row">
+								<div id='' class="technique">FRONT PUSH KICK</div>
+								<div id='' class="technique">REAR PUSH KICK</div>
+							</div>
+						</div>
+					</div>
+					<div class="tech-wrapper">
+						<h3>knees<span class="arrow-up"></span></h3>
+						<div class="table">
+							<div class="row">
+								<div id='' class="technique">KNEES</div>
+							</div>
+							<div class="row">
+								<div id='' class="technique">FRONT LONG KNEE</div>
+								<div id='' class="technique">REAR LONG KNEE</div>
+							</div>
+							<div class="row">
+								<div id='' class="technique">FRONT SIDE KNEE</div>
+								<div id='' class="technique">REAR SIDE KNEE</div>
+							</div>
+							<div class="row">
+								<div id='' class="technique">CLINCH FRONT KNEE</div>
+								<div id='' class="technique">CLINCH REAR KNEE</div>
+							</div>
+						</div>
+					</div>
+					<div class="tech-wrapper">
+						<h3>special<span class="arrow-up"></span></h3>
+						<div class="table">
+							<div class="row">
+								<div id='' class="technique">FLYING KNEE</div>
+								<div id='' class="technique">SUPERMAN PUNCH</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<h2>defense<span class="arrow-down"></span></h2>
+					<div class="defense-con">
+						<div class="tech-wrapper">
+							<h3>blocks<span class="arrow-up"></span></h3>
+							<div class="table">
+								<div class="row">
+									<div id='' class="technique">HELMET</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">BLOCK JAB</div>
+									<div id='' class="technique">BLOCK CROSS</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">BLOCK LEFT HOOK</div>
+									<div id='' class="technique">BLOCK RIGHT HOOK</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">BLOCK LEFT UPPERCUT</div>
+									<div id='' class="technique">BLOCK RIGHT UPPERCUT</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">BLOCK LEFT HEAD KICK</div>
+									<div id='' class="technique">BLOCK RIGHT HEAD KICK</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">CHECK LEFT KICK</div>
+									<div id='' class="technique">CHECK RIGHT KICK</div>
+								</div>
+							</div>
+						</div>
+						<div class="tech-wrapper">
+							<h3>parrys<span class="arrow-up"></span></h3>
+							<div class="table">
+								<div class="row">
+									<div id='' class="technique">PARRY JAB</div>
+									<div id='' class="technique">PARRY CROSS</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">PARRY LEFT UPPERCUT</div>
+									<div id='' class="technique">PARRY RIGHT UPPERCUT</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">PARRY LEFT KICK</div>
+									<div id='' class="technique">PARRY RIGHT KICK</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">PARRY LEFT PUSH KICK</div>
+									<div id='' class="technique">PARRY RIGHT PUSH KICK</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">PARRY LEFT KNEE</div>
+									<div id='' class="technique">PARRY RIGHT KNEE</div>
+								</div>
+							</div>
+						</div>
+						<div class="tech-wrapper">
+							<h3>evasion<span class="arrow-up"></span></h3>
+							<div class="table">
+								<div class="row">
+									<div id='' class="technique">SLIP LEFT</div>
+									<div id='' class="technique">SLIP RIGHT</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">DUCK</div>
+									<div id='' class="technique">LEANBACK</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">EVADE LEFT LEG KICK</div>
+									<div id='' class="technique">EVADE RIGHT LEG KICK</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">EVADE LEFT KICK</div>
+									<div id='' class="technique">EVADE RIGHT KICK</div>
+								</div>
+							</div>
+						</div>
+						<div class="tech-wrapper">
+							<h3>movement<span class="arrow-up"></span></h3>
+							<div class="table">
+								<div class="row">
+									<div id='' class="technique">STEP FORWARD</div>
+									<div id='' class="technique">STEP BACK</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">STEP LEFT</div>
+									<div id='' class="technique">STEP RIGHT</div>
+								</div>
+								<div class="row">
+									<div id='' class="technique">PIVOT LEFT</div>
+									<div id='' class="technique">PIVOT RIGHT</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</body>
+</html>
