@@ -7,8 +7,25 @@ $( document ).ready(function() {
     var no_plus = 0;
     var box_count = 2;
     var i = 0;
+    // var date_selected;
+    // var date_select_month;
+    // var date_select_day;
     // var join_combos;
 
+    //Date select
+    $('.go').click(function(){
+        date_selected = $('.date').val();
+        if(date_selected.length){
+            console.log ('date: ' + $('.date').val());
+            $('.date-select, .overlay').addClass('hide');
+
+            date_select_month = date_selected.substring(5, 7);
+            date_select_day = date_selected.substring(8, 10);
+
+            console.log('date_select_month: ' + date_select_month);
+            console.log('date_select_day: ' + date_select_day);
+        }
+    });
     //Focus on combo box
     box_focus();
     //Mobile Menu display

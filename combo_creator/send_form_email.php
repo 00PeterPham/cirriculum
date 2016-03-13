@@ -3,6 +3,8 @@
   // $msg = $_POST['combos'];
 
   $combo     = $_POST['combos'];
+  $month     = $_POST['month_'];
+  $day     = $_POST['day_'];
   // $combo      = mysql_real_escape_string($combo);
 
   // // send email
@@ -27,8 +29,12 @@
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "INSERT INTO combos (march)
-	VALUES ('$combo')";
+	// $sql = "INSERT INTO combos (march) WHERE 'id=17'
+	// VALUES ('$combo')";
+
+	$sql = "UPDATE combos 
+			SET $month ='$combo'
+			WHERE id='$day'";
 
 	if ($conn->query($sql) === TRUE) {
 	    echo "New record created successfully";

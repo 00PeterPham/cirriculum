@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	//Storing combo box values into vars
     $('.submit').click(function(){
+    	//COMBOS
         var comboArray = [];
 		var i = 0;
 
@@ -13,42 +14,46 @@ $(document).ready(function() {
         var join_combos = comboArray.join(' __ ');
         console.log('cOMBO STRING: ' + join_combos);
 
+        //DATE
+        var month;
+        var day;
+
+    	// console.log('month and day: before conversion - '+ date_select_month + date_select_day);
+
+        if (date_select_month == 01){
+        	month = 'jan';
+        }else if(date_select_month == 02){
+        	month = 'feb';
+        }else if(date_select_month == 03){
+        	month = 'march';
+        }else if(date_select_month == 04){
+        	month = 'april';
+        }else if(date_select_month == 05){
+        	month = 'may';
+        }else if(date_select_month == 06){
+        	month = 'june';
+        }else if(date_select_month == 07){
+        	month = 'july';
+        }else if(date_select_month == 08){
+        	month = 'aug';
+        }else if(date_select_month == 09){
+        	month = 'sept';
+        }else if(date_select_month == 10){
+        	month = 'oct';
+        }else if(date_select_month == 44){
+        	month = 'nov';
+        }else if(date_select_month == 12){
+        	month = 'dec';
+        }
+
+        day = date_select_day.replace(/0/g , "");
+        console.log('month and day: '+ month + day);
+
+
         $.post("send_form_email.php", {
-			combos: join_combos
+			combos: join_combos,
+			month_: month,
+			day_: day
 		});
     });
-
-
-
-	$(".submit_butt").click(function() {
-		var name = $(".contact-us-con .name").val();
-		var email = $(".contact-us-con .contact-email").val();
-		var msg = $(".contact-us-con .msg").val();
-
-		// console.log('name: ' + name);
-		// console.log('email: ' + email);
-		// console.log('msg: ' + msg);
-
-		if (name == '' || email == '' || msg == '') {
-			// alert("Please fill in all fields.");
-			$('.contact-us-con .error-msg').addClass(' show-error');
-		} else {
-			// console.log("POSTED");
-			// Returns successful data submission message when the entered information is stored in database.
-			$.post("send_form_email.php", {
-			name1: name,
-			email1: email,
-			msg1: msg
-		}, function(data) {
-		// alert(data);
-		$('.contact-us-con .contact-msg').addClass(' show-msg');
-		$('.contact-us-con .error-msg').removeClass(' show-error');
-		$('.contact-us-con .contactform')[0].reset(); // To reset form fields
-		$('.contact-us-con .name').val('');
-		$('.contact-us-con .contact-email').val('');
-		$('.contact-us-con .msg').val('');
-		// console.log("RESET FIRED");
-		});
-		}
-	});
 });
