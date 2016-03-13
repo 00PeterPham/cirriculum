@@ -1,6 +1,10 @@
 $(document).ready(function() {
 	//Storing combo box values into vars
     $('.submit').click(function(){
+    	//Approval box
+    	$('.submit-approval').addClass('show');
+    	$('.overlay').removeClass('hide');
+
     	//COMBOS
         var comboArray = [];
 		var i = 0;
@@ -49,11 +53,23 @@ $(document).ready(function() {
         day = date_select_day.replace(/0/g , "");
         console.log('month and day: '+ month + day);
 
+        //Submit Approval
+        $('.yes').click(function(){
+        	//Submit to db
+        	$.post("send_form_email.php", {
+				combos: join_combos,
+				month_: month,
+				day_: day
+			});
 
-        $.post("send_form_email.php", {
-			combos: join_combos,
-			month_: month,
-			day_: day
-		});
+    		$('.submit-approval').removeClass('show');
+    		$('.overlay').addClass('hide');
+    		$('.submit').removeClass('active');
+    	});
+    	$('.no').click(function(){
+    		$('.submit-approval').removeClass('show');
+    		$('.overlay').addClass('hide');
+    		$('.submit').removeClass('active');
+    	});
     });
 });

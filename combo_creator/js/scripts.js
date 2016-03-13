@@ -131,6 +131,7 @@ $( document ).ready(function() {
         }
         
     });
+    
     //Storing combo box values into vars
     // $('.submit').click(function(){
     //     console.log('BOX COUNT: ' + box_count);

@@ -54,11 +54,13 @@
   right: 0;
   top: 0;
   bottom: 0;
+  z-index: 998;
 }
 .overlay.hide {
   display: none;
 }
-.date-select {
+.date-select,
+.submit-approval {
   display: block;
   position: fixed;
   top: 35%;
@@ -67,27 +69,49 @@
   margin: 0 auto;
   /*text-align: center;*/
   background-color: #fff;
-  z-index: 999;
   padding: 20%;
   /* height: 50%; */
   border: 2px solid #000;
+  z-index: 999;
 }
-.date-select .date-label {
+.date-select .date-label,
+.submit-approval .date-label {
   text-align: center;
 }
-.date-select .date {
+.date-select .date,
+.submit-approval .date {
   width: 100%;
   margin-bottom: 10px;
   text-align: center;
 }
-.date-select .go {
+.date-select .go,
+.submit-approval .go {
   display: block;
   background-color: #ccc;
   text-align: center;
   text-transform: uppercase;
 }
-.date-select.hide {
+.date-select.hide,
+.submit-approval.hide {
   display: none;
+}
+.submit-approval {
+  display: none;
+}
+.submit-approval.show {
+  display: block;
+}
+.submit-approval .label {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.submit-approval span {
+  display: inline-block;
+  width: 48%;
+  margin: 0 1%;
+  text-align: center;
+  background-color: #ccc;
+  padding: 5px 0;
 }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -160,7 +184,7 @@ body .inner .hamburger.active {
   body .inner .hamburger.active {
     position: fixed;
     bottom: 0;
-    z-index: 999;
+    z-index: 997;
     width: 100%;
     left: 0;
     margin-bottom: 0;
@@ -261,7 +285,7 @@ body .inner .top-con .modifiers-con .multi-con .multi-inputs.active {
   body .inner .top-con .modifiers-con .multi-con .multi-inputs.active {
     position: fixed;
     bottom: 0;
-    z-index: 999;
+    z-index: 997;
     width: 50%;
     right: 0;
     height: 38px;
