@@ -86,6 +86,8 @@
 		  // $combo     = $_POST['combos'];
 		  $month     = $_POST['month_'];
 		  $day     = $_POST['day_'];
+
+		  echo "<br> $month, $day <br>";
 		  // $combo      = mysql_real_escape_string($combo);
 
 		  // // send email
