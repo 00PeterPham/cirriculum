@@ -53,6 +53,9 @@ $(document).ready(function() {
         day = date_select_day.replace(/0/g , "");
         console.log('month and day: '+ month + day);
 
+        //Sets Approval date text
+        $('.submit-date').text(month + ' ' + day);
+
         //Submit Approval
         $('.yes').click(function(){
         	//Submit to db

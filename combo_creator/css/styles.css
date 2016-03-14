@@ -101,11 +101,16 @@
 .submit-approval.show {
   display: block;
 }
+.submit-approval .submit-date {
+  text-transform: capitalize;
+  font-weight: bold;
+}
 .submit-approval .label {
   margin-bottom: 10px;
   text-align: center;
 }
-.submit-approval span {
+.submit-approval .yes,
+.submit-approval .no {
   display: inline-block;
   width: 48%;
   margin: 0 1%;
