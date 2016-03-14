@@ -18,8 +18,66 @@
 <body>
 	<div class="inner">
 		<a class='combo-creator-link' href="/cirriculum/combo_creator">Combo Creator</a>
-		<input class='date' type='date' name='date_picker'>
-		<div class="go">go</div>
+<!-- 		<input class='date' type='date' name='date_picker'>
+		<div class="go">go</div> -->
+
+
+		<form action="index.php" method="post">
+			Month:  
+			<select name="month_">
+				<option value='blank'></option>
+				<option value='jan'>January</option>
+				<option value='feb'>February</option>
+				<option value='march'>March</option>
+				<option value='april'>April</option>
+				<option value='may'>May</option>
+				<option value='june'>June</option>
+				<option value='july'>July</option>
+				<option value='aug'>August</option>
+				<option value='sept'>September</option>
+				<option value='oct'>October</option>
+				<option value='nov'>November</option>
+				<option value='decem'>December</option>
+			</select>
+			<br>
+			Day: 
+			<select type="day" name="day_">
+				<option value='blank'></option>
+				<option value='1'>1</option>
+				<option value='2'>2</option>
+				<option value='3'>3</option>
+				<option value='4'>4</option>
+				<option value='5'>5</option>
+				<option value='6'>6</option>
+				<option value='7'>7</option>
+				<option value='8'>8</option>
+				<option value='9'>9</option>
+				<option value='10'>10</option>
+				<option value='11'>11</option>
+				<option value='12'>12</option>
+				<option value='13'>13</option>
+				<option value='14'>14</option>
+				<option value='15'>15</option>
+				<option value='16'>16</option>
+				<option value='17'>17</option>
+				<option value='18'>18</option>
+				<option value='19'>19</option>
+				<option value='20'>20</option>
+				<option value='21'>21</option>
+				<option value='22'>22</option>
+				<option value='23'>23</option>
+				<option value='24'>24</option>
+				<option value='25'>25</option>
+				<option value='26'>26</option>
+				<option value='27'>27</option>
+				<option value='28'>28</option>
+				<option value='29'>29</option>
+				<option value='30'>30</option>
+				<option value='31'>01</option>
+			</select>
+			<br>
+			<input type="submit">
+		</form>
 
 		<?php
 		  // // the message
@@ -34,16 +92,16 @@
 		  // mail("titan.maclub@gmail.com","My subject",$msg);
 
 		  	//TITAN DB
-			// $servername = "mysql.peter-pham.com";
-			// $username = "titanmac";
-			// $password = "headkick9591";
-			// $dbname = "titan_mac";
+			$servername = "mysql.peter-pham.com";
+			$username = "titanmac";
+			$password = "headkick9591";
+			$dbname = "titan_mac";
 
 		  	//LOCAL DB
-			$servername = "localhost";
-			$username = "root";
-			$password = "headkick";
-			$dbname = "titan";
+			// $servername = "localhost";
+			// $username = "root";
+			// $password = "headkick";
+			// $dbname = "titan";
 
 			// Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
@@ -55,11 +113,19 @@
 			// $sql = "INSERT INTO combos (march) WHERE 'id=17'
 			// VALUES ('$combo')";
 
-			$sql = "SELECT march FROM combos WHERE id='17'";
-			$result = $conn->query($sql);
-			echo $result;
+			$sql = "SELECT $month FROM combos WHERE id='$day'";
+			$result = mysqli_query($conn, $sql);
 
-			$conn->close();
+			if (mysqli_num_rows($result) > 0) {
+			    // output data of each row
+			    while($row = mysqli_fetch_assoc($result)) {
+			        echo str_replace(" __ ","<br>",$row["march"]);
+			    }
+			} else {
+			    echo "0 results";
+			}
+
+			mysqli_close($conn);
 		?>
 
 		<!-- <h2>MARCH</h2>

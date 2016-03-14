@@ -2,7 +2,7 @@
   // // the message
   // $msg = $_POST['combos'];
 
-  $combo     = $_POST['combos'];
+  // $combo     = $_POST['combos'];
   $month     = $_POST['month_'];
   $day     = $_POST['day_'];
   // $combo      = mysql_real_escape_string($combo);
@@ -11,16 +11,16 @@
   // mail("titan.maclub@gmail.com","My subject",$msg);
 
   	//TITAN DB
-	$servername = "mysql.peter-pham.com";
-	$username = "titanmac";
-	$password = "headkick9591";
-	$dbname = "titan_mac";
+	// $servername = "mysql.peter-pham.com";
+	// $username = "titanmac";
+	// $password = "headkick9591";
+	// $dbname = "titan_mac";
 
   	//LOCAL DB
-	// $servername = "localhost";
-	// $username = "root";
-	// $password = "headkick";
-	// $dbname = "titan";
+	$servername = "localhost";
+	$username = "root";
+	$password = "headkick";
+	$dbname = "titan";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -32,15 +32,9 @@
 	// $sql = "INSERT INTO combos (march) WHERE 'id=17'
 	// VALUES ('$combo')";
 
-	$sql = "UPDATE combos 
-			SET $month ='$combo'
-			WHERE id='$day'";
-
-	if ($conn->query($sql) === TRUE) {
-	    echo "New record created successfully";
-	} else {
-	    echo "Error: " . $sql . "<br>" . $conn->error;
-	}
+	$sql = "SELECT $month FROM combos WHERE id='$day'";
+	$result = $conn->query($sql);
+	echo $result;
 
 	$conn->close();
 ?>

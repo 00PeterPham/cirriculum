@@ -19,21 +19,31 @@
   top: 50%;
   left: 120px;
 }
-body .inner .month-con .week-label {
-  position: relative;
-  cursor: pointer;
+body .inner {
+  /*		.month-con {
+			.week-label {
+				position: relative;
+				cursor: pointer;
+				display: block;
+			}
+			.week {
+				display: block;
+
+				&.expand {
+					@media(max-width: @screen-mobile-med){
+						display: block;
+					}
+				}
+				@media(max-width: @screen-mobile-med){
+					display: none;
+				}
+				.day {
+
+				}
+			}
+		}*/
+}
+body .inner .combo-creator-link,
+body .inner .date {
   display: block;
-}
-body .inner .month-con .week {
-  display: block;
-}
-@media (max-width: 980px) {
-  body .inner .month-con .week.expand {
-    display: block;
-  }
-}
-@media (max-width: 980px) {
-  body .inner .month-con .week {
-    display: none;
-  }
 }
