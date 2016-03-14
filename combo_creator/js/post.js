@@ -62,6 +62,7 @@ $(document).ready(function() {
 				day_: day
 			});
 
+            $('.combo').val("");
     		$('.submit-approval').removeClass('show');
     		$('.overlay').addClass('hide');
     		$('.submit').removeClass('active');

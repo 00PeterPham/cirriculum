@@ -119,7 +119,7 @@
 			if (mysqli_num_rows($result) > 0) {
 			    // output data of each row
 			    while($row = mysqli_fetch_assoc($result)) {
-			        echo str_replace(" __ ","<br>",$row["march"]);
+			        echo str_replace(" __ ","<br><br>",$row["march"]);
 			    }
 			} else {
 			    echo "0 results";
