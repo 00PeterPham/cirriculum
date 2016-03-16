@@ -7,6 +7,8 @@ $( document ).ready(function() {
     var no_plus = 0;
     var box_count = 2;
     var i = 0;
+    var combo_returned;
+    var combo_returned_array = [];
     // var date_selected;
     // var date_select_month;
     // var date_select_day;
@@ -25,6 +27,70 @@ $( document ).ready(function() {
             console.log('date_select_month: ' + date_select_month);
             console.log('date_select_day: ' + date_select_day);
         }
+
+        if (date_select_month == 01){
+            month = 'jan';
+        }else if(date_select_month == 02){
+            month = 'feb';
+        }else if(date_select_month == 03){
+            month = 'march';
+        }else if(date_select_month == 04){
+            month = 'april';
+        }else if(date_select_month == 05){
+            month = 'may';
+        }else if(date_select_month == 06){
+            month = 'june';
+        }else if(date_select_month == 07){
+            month = 'july';
+        }else if(date_select_month == 08){
+            month = 'aug';
+        }else if(date_select_month == 09){
+            month = 'sept';
+        }else if(date_select_month == 10){
+            month = 'oct';
+        }else if(date_select_month == 44){
+            month = 'nov';
+        }else if(date_select_month == 12){
+            month = 'decem';
+        }
+        day = date_select_day.replace(/0/g , "");
+
+        $.get( 
+            "get_combos_for_creator.php",
+            {
+                month_: month,
+                day_: day
+            },
+            function(data) {
+               // $('.combo').val(data);
+               combo_returned = data;
+               combo_returned_array = combo_returned.split(" __ ");
+               console.log('combo returned array length: ' + combo_returned_array);
+
+               var box_inc = 1;
+               $("#combo-" + box_inc + "").val(combo_returned_array[box_inc]);
+
+               for (var i = combo_returned_array.length- 3; i >= 0; i--) {
+                   $("<textarea readonly='true' id='combo-"+ box_count +"'class='combo' placeholder='combo'></textarea>").insertAfter("#combo-" + (box_count-1) + "");
+
+                   // var box_inc = 1;
+                   $("#combo-" + box_count + "").val(combo_returned_array[box_count]);
+                   // box_inc++;
+
+                     box_count += 1;
+
+               };
+               //Fire Box focus function on new boxes
+               box_focus();
+               //Fire Double Tap function on new boxes
+               fire_doubleTap();
+               // $(".combo").each(function(){
+               //      var box_inc = 1;
+               //     $("#combo-" + box_inc + "").val(combo_returned_array[box_inc]);
+               //     box_inc++;
+               //  });
+            }
+        );
     });
     //Focus on combo box
     box_focus();

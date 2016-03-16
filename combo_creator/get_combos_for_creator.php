@@ -3,8 +3,8 @@
   // $msg = $_POST['combos'];
 
   // $combo     = $_POST['combos'];
-  $month     = $_POST['month_'];
-  $day     = $_POST['day_'];
+  $month     = $_REQUEST['month_'];
+  $day     = $_REQUEST['day_'];
   // $combo      = mysql_real_escape_string($combo);
 
   // // send email
@@ -30,8 +30,20 @@
 	} 
 
 	$sql = "SELECT $month FROM combos WHERE id='$day'";
-	$result = $conn->query($sql);
-	echo $result;
+	$result = mysqli_query($conn, $sql);
 
-	$conn->close();
+	echo $month . $day . " __ ";
+
+	// echo $combos_result;
+
+	if (mysqli_num_rows($result) > 0) {
+	    // output data of each row
+	    while($row = mysqli_fetch_assoc($result)) {
+	        echo $row["march"];
+	    }
+	} else {
+	    echo "0 results";
+	}
+
+	mysqli_close($conn);
 ?>
