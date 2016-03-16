@@ -59,7 +59,7 @@ $(document).ready(function() {
         //Submit Approval
         $('.yes').click(function(){
         	//Submit to db
-        	$.post("send_form_email.php", {
+        	$.post("send_combos.php", {
 				combos: join_combos,
 				month_: month,
 				day_: day
