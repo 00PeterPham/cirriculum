@@ -48,7 +48,7 @@ $( document ).ready(function() {
             month = 'sept';
         }else if(date_select_month == 10){
             month = 'oct';
-        }else if(date_select_month == 44){
+        }else if(date_select_month == 11){
             month = 'nov';
         }else if(date_select_month == 12){
             month = 'decem';
