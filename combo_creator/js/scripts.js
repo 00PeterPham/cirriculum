@@ -14,6 +14,9 @@ $( document ).ready(function() {
     // var date_select_day;
     // var join_combos;
 
+    //clipboard
+    new Clipboard('.btn');
+
     //Date select
     $('.go').click(function(){
         date_selected = $('.date').val();
@@ -65,7 +68,11 @@ $( document ).ready(function() {
                // $('.combo').val(data);
                combo_returned = data;
                combo_returned_array = combo_returned.split(" __ ");
+               combo_copy_prep = combo_returned.replace(/\ __ /g, '    ');
                console.log('combo returned array length: ' + combo_returned_array);
+
+               //Populate all combos to clipboard holder
+               $('#all_combos').val(combo_copy_prep);
 
                var box_inc = 1;
                $("#combo-" + box_inc + "").val(combo_returned_array[box_inc]);

@@ -11,6 +11,9 @@
 		<script type="text/javascript" src="js/lib/jquery-1.11.2.min.js"></script>
 		<script type="text/javascript" src="js/lib/jquery.mobile-1.4.5.js"></script>
 		<script type="text/javascript" src="js/global_variables.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script>
+
 		<script type="text/javascript" src="js/scripts.js"></script>
 		<script type="text/javascript" src="js/post.js"></script>
 		<!--[if lt IE 9]>
@@ -63,7 +66,14 @@
 						</div>
 					</div>
 					<div class="submit mod toggle">SUBMIT</div>
-					<a class='toggle' href="/cirriculum/index.php" target='_blank'>CIRRICULUM LINK</a>
+					<a class='toggle cirric_link' href="/cirriculum/index.php" target='_blank' data-role="none">CIRRICULUM LINK</a>
+					<!-- CLIPBOARD CON -->
+				    <!-- Trigger -->
+				    <button class="btn toggle" data-clipboard-target="#all_combos">
+				        Copy All Combos to Clipboard
+				    </button>
+				    <!-- Target -->
+				    <input id="all_combos" value="">
 				</div>
 			</div>
 			<div class="technique-con">

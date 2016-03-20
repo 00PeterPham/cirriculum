@@ -44,7 +44,7 @@ $(document).ready(function() {
         	month = 'sept';
         }else if(date_select_month == 10){
         	month = 'oct';
-        }else if(date_select_month == 44){
+        }else if(date_select_month == 11){
         	month = 'nov';
         }else if(date_select_month == 12){
         	month = 'decem';
@@ -65,10 +65,11 @@ $(document).ready(function() {
 				day_: day
 			});
 
-            $('.combo').val("");
+            // $('.combo').val("");
     		$('.submit-approval').removeClass('show');
     		$('.overlay').addClass('hide');
     		$('.submit').removeClass('active');
+            alert('Combos Submitted');
     	});
     	$('.no').click(function(){
     		$('.submit-approval').removeClass('show');

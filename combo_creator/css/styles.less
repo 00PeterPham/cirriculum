@@ -1,6 +1,12 @@
 /*Media Queries*/
 @screen-mobile-med: 980px;
 
+#all_combos {
+	position: absolute;
+	width: 1px;
+	bottom: 0;
+	z-index: -10;
+}
 .ui-focus,
 .ui-btn:focus {
     -moz-box-shadow: none !important;
@@ -296,8 +302,24 @@ body {
 						display: none;
 					}
 					&.show {
-						display: block
+						display: block;
 					}
+				}
+				.cirric_link, .btn {
+					&.toggle {
+						@media(max-width: @screen-mobile-med){ 
+							display: none;
+						}
+						&.show {
+							display: inline-block;
+							width: 50%;
+							margin-right: -4px;
+						}
+					}
+				}
+				.btn {
+					padding: 10px;		
+					margin-top: 5px;		
 				}
 			}
 		}
